@@ -1,0 +1,7 @@
+<h1>users#show</h1>
+<lable>name:</lable> <%= @users.name %>
+</br>
+<lable>email:</lable> <%= @users.email %>
+</br>
+<%= link_to "index",users_path %>
+

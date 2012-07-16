@@ -1,0 +1,7 @@
+<h1> users#edit </h1>
+<lable>name:</lable> <%= @users.name %>
+</br>
+<lable>email:</lable> <%= @users.email %>
+</br>
+<%= link_to "Edit", users_path %>
+
