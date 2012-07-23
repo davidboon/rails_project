@@ -1,3 +1,27 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email
+  has_many :posts
+  #attr_accessible :user_name, :email 
+  validates :email, :first_name, :last_name, :presence => true
+  validates :user_name, :length => { :maximum => 10 }
+  before_save :check_fullname_has_a_value
+  protected
+  def check_fullname_has_a_value
+    if full_name.blank?
+      self.full_name=first_name+" "+last_name
+    end
+  end
+  before_save :check_username_has_a_value
+  protected
+  def check_username_has_a_value
+    if user_name.blank?
+      self.user_name=email
+    end	
+  end
+  before_save :check_firstname_and_lastname_is_capitalize
+  protected
+  def check_firstname_and_lastname_is_capitalize
+    if first_name.capitalize?
+       self.first_name=first_name.capitalize
+    end
+  end
 end

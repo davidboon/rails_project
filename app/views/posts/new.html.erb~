@@ -1,0 +1,17 @@
+<h1> posts#create_post </h1>
+<%= form_for([@users, @users.posts.build]) do |upost| %>
+<%= upost.label :title %>
+<br>
+<%= upost.text_field :title %>
+<br>
+<%= upost.label :description %>
+<br>
+<%= upost.text_area :description %>
+<br>
+<%= upost.submit %>
+<% end %>
+
+<br>
+<%= link_to "Back", user_path(@users) %>
+
+

@@ -1,7 +1,27 @@
 <h1>users#show</h1>
-<lable>name:</lable> <%= @users.name %>
-</br>
+<lable>user_name:</lable> <%= @users.user_name %>
+<br>
 <lable>email:</lable> <%= @users.email %>
-</br>
-<%= link_to "index",users_path %>
+<br>
+<lable>first_name:</lable> <%= @users.first_name %>
+<br>
+<lable>last_name:</lable> <%= @users.last_name %>
+<br>
+<lable>full_name:</lable> <%= @users.full_name %>
+<br>
+<lable>contacts:</lable> <%= @users.contact_no %>
+<br>
+<lable>user_type:</lable> <%= @users.user_type %>
+<br>
+<%= link_to "Create Post",new_user_post_path(@users) %>            
+ <%= link_to "Home",users_path %>
+<br>
+<label>--------Posts------</label>
+<br>
+<% @users.posts.each do |upost| %>
+<ul>
+<li><%= link_to upost.title,user_posts_path(upost,@posts) %></li>
+</ul>
+<% end %>
+
 
