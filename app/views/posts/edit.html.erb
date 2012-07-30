@@ -1,4 +1,4 @@
-<h1> posts#create_post </h1>
+<h1>posts#edit</h1>
 <table border="1">
 <%= form_for([@users, @users.posts.build]) do |upost| %>
 <tr>
@@ -10,9 +10,9 @@
 <td><%= upost.text_area :description %></td>
 </tr>
 <tr>
+<td><%= link_to "Back", user_path(@users) %></td>
 <td><%= upost.submit %></td>
 </tr>
 <% end %>
 </table>
-
 

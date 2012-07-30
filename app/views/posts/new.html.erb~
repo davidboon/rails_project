@@ -1,17 +1,19 @@
 <h1> posts#create_post </h1>
+<table border="1">
 <%= form_for([@users, @users.posts.build]) do |upost| %>
-<%= upost.label :title %>
-<br>
-<%= upost.text_field :title %>
-<br>
-<%= upost.label :description %>
-<br>
-<%= upost.text_area :description %>
-<br>
-<%= upost.submit %>
+<tr>
+<td><%= upost.label :title %></td>
+<td><%= upost.text_field :title %></td>
+</tr>
+<tr>
+<td><%= upost.label :description %></td>
+<td><%= upost.text_area :description %></td>
+</tr>
+<tr>
+<td><%= link_to "Back", user_path(@users) %></td>
+<td><%= upost.submit %></td>
+</tr>
 <% end %>
-
-<br>
-<%= link_to "Back", user_path(@users) %>
+</table>
 
 

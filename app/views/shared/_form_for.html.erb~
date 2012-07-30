@@ -1,4 +1,3 @@
-<h1> users#create </h1>
 <table border="1">
 <%= form_for @users do |u| %>
 <tr>

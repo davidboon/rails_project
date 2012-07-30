@@ -74,10 +74,54 @@ padding-top:22px;
 ul li:first-child {
 border : none;
 }
+#banner {
+border-top : 1px dashed #999999;
+border-bottom : 1px dashed #999999;
+padding : 8px;
+}
 h1, h2 {
 font-family : Georgia, Times, sans-serif;
 font-size : 24px;
 color : #325101;
+}
+#divheader1 {
+padding : 15px;
+border-bottom : 1px dashed #999999;
+}
+#divheader2 {
+padding : 10px 0;
+border-bottom : 1px dashed #999999;
+}
+#divhtml {
+padding : 10px;
+border-right : 1px dashed #999999;
+}
+#divcss {
+padding : 10px;
+}
+.html_css {
+width : 312px;
+float : left;
+}
+#divseo {
+border : #d6c89d solid 5px;
+float : right;
+width : 312px;
+padding : 6px;
+background-color : #f7f1df;
+}
+.anchorright {
+float : right;
+}
+.listseo {
+background-image : url(assets/bullet.png);
+background-repeat : no-repeat;
+background-position : 8px 8px;
+padding : 5px 0 5px 25px;
+}
+#lastul {
+list-style-type : none;
+padding : 20px;
 }
 #lastunorderlist {
 float : right;

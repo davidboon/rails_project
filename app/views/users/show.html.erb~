@@ -1,27 +1,25 @@
 <h1>users#show</h1>
-<lable>user_name:</lable> <%= @users.user_name %>
-<br>
-<lable>email:</lable> <%= @users.email %>
-<br>
-<lable>first_name:</lable> <%= @users.first_name %>
-<br>
-<lable>last_name:</lable> <%= @users.last_name %>
-<br>
-<lable>full_name:</lable> <%= @users.full_name %>
-<br>
-<lable>contacts:</lable> <%= @users.contact_no %>
-<br>
-<lable>user_type:</lable> <%= @users.user_type %>
-<br>
-<%= link_to "Create Post",new_user_post_path(@users) %>            
- <%= link_to "Home",users_path %>
-<br>
-<label>--------Posts------</label>
-<br>
+<table border="1" >
+<tr><td>UserName</td><td> <%= @users.user_name %></td></tr>
+<tr><td>EmailId</td><td> <%= @users.email %></td></tr>
+<tr><td>FirstName</td><td> <%= @users.first_name %></td></tr>
+<tr><td>LastName</td><td> <%= @users.last_name %></td></tr>
+<tr><td>FullName</td><td> <%= @users.full_name %></td></tr>
+<tr><td>ContactNo</td><td> <%= @users.contact_no %></td></tr>
+<tr><td>UserType</td><td> <%= @users.user_type %></td></tr>
+<tr><td><%= link_to "Index",users_path %></td><td><%= link_to "Create Post",new_user_post_path(@users) %></td></tr>
+</table>
+<br><br>
+<table border="1">
+<th>PostTitle</th>
 <% @users.posts.each do |upost| %>
-<ul>
-<li><%= link_to upost.title,user_posts_path(upost,@posts) %></li>
-</ul>
+<tr>
+<td><%= upost.title %></td>
+<td><%= link_to "Show",user_post_path(@users,upost) %></td>
+<td><%= link_to "Edit",edit_user_post_path(@users,upost) %></td>
+<td><%= link_to "Delete",user_post_path(@users,upost),:method=>:delete %></td>
+</tr>
 <% end %>
+</table>
 
 
